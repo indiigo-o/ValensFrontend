@@ -32,7 +32,7 @@ export default function Home() {
       year: year,
       name: name
     }
-    const responseS = await fetch("https://localhost:44308/Movie/GetByCategory" + sending);
+    //const responseS = await fetch("https://localhost:44308/Movie/GetByCategory" + sending);
    // const response = await responseS.json();
    // setMovieData(response);
   }
@@ -45,7 +45,7 @@ export default function Home() {
             {
               (categoryData.length == 0) ? <p className="notfound">Not found</p> : categoryData.map((res: any) => {
                 return (
-                  <a><Categories info={res} onClick={Filter(res.id,"","")} /></a>
+                  <Categories info={res} onClick={Filter(res.id,"","")} />
                 )
               })
             }
