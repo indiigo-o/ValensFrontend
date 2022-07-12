@@ -3,6 +3,7 @@ import React from "react";
 import useStyles from "./CardStyle";
 
 const Card = (movie: any) => {
+    
     const classes = useStyles();
 
     console.log(movie);
