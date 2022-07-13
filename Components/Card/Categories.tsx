@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Categories = (categories: any) => {
 
@@ -6,7 +6,7 @@ const Categories = (categories: any) => {
 
     return (
         <>
-                <li><a href="#home">{categories.info.name}</a></li>
+            <li><a href="#home">{categories.info.name}</a></li>
         </>
     )
 }
