@@ -6,7 +6,7 @@ const Categories = (categories: any) => {
 
     return (
         <>
-            <li><a href="#home">{categories.info.name}</a></li>
+            <li><a>{categories.info.name}</a></li>
         </>
     )
 }

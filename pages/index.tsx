@@ -72,7 +72,7 @@ export default function Home() {
                 {
                   (categoryData.length == 0) ? <p className="notfound">Not found</p> : categoryData.map((res: any) => {
                     return (
-                      <Categories info={res} onClick={Filter(res.id, "", "")} />
+                      <Categories info={res} />
                     )
                   })
                 }
