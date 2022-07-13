@@ -37,22 +37,36 @@ export default function Home() {
   }
 
   async function Sort(arg: string) {
+    if(arg!="Year of release" && arg!="Name"){
+      const responseS = await fetch("https://localhost:44308/Movie/Sort?by=" + arg)
+      const response = await responseS.json();
+      setMovieData(response);
+      console.log("Moviessorted", movieData);
+    }
+
+    if(arg=="Year of release" || arg=="Name"){
     if(arg=='Year of release')
     arg ='year';
     else
     arg='name';
-
     const responseS = await fetch("https://localhost:44308/Movie/Sort?by=" + arg)
     const response = await responseS.json();
     setMovieData(response);
     console.log("Moviessorted", movieData);
+    }
   }
 
-  const requestRegion = (event: any) => {
+  const sortingBy = (event: any) => {
     Sort(event.target.value);
     console.log(event.target.value);
   };
 
+  const searchby = (event: any) => {
+    Sort(event.target.value);
+    if(event.target.value==""){
+      getMovies();
+    }
+  };
 
   return (
     <>
@@ -75,11 +89,13 @@ export default function Home() {
                   })
                 }
 
-                <select onChange={requestRegion} className="sortSelect" >
+                <select onChange={sortingBy} className="sortSelect" >
                   <option disabled selected>Sort movies by</option>
                   <option>Year of release</option>
                   <option>Name</option>
                 </select>
+                <input onChange={searchby} className='searchbar' type="text" placeholder="Search.."/>
+
               </ul>
 
             </nav>
