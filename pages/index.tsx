@@ -30,10 +30,29 @@ export default function Home() {
       year: year,
       name: name
     }
+
     //const responseS = await fetch("https://localhost:44308/Movie/GetByCategory" + sending);
     // const response = await responseS.json();
     // setMovieData(response);
   }
+
+  async function Sort(arg: string) {
+    if(arg=='Year of release')
+    arg ='year';
+    else
+    arg='name';
+
+    const responseS = await fetch("https://localhost:44308/Movie/Sort?by=" + arg)
+    const response = await responseS.json();
+    setMovieData(response);
+    console.log("Moviessorted", movieData);
+  }
+
+  const requestRegion = (event: any) => {
+    Sort(event.target.value);
+    console.log(event.target.value);
+  };
+
 
   return (
     <>
@@ -56,7 +75,13 @@ export default function Home() {
                   })
                 }
 
+                <select onChange={requestRegion} className="sortSelect" >
+                  <option disabled selected>Sort movies by</option>
+                  <option>Year of release</option>
+                  <option>Name</option>
+                </select>
               </ul>
+
             </nav>
           </div>
           <div className="movies">
