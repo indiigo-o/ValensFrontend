@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import React from 'react'
 import { useEffect, useState } from "react";
+import React from 'react'
 
 interface IMovieData {
     id: 1,
@@ -26,8 +26,10 @@ export default function Home() {
         setMovieData(response);
 
         console.log("Response:", response);
-    }
 
+
+    }
+    
     console.log("Data:", movieData);
 
     useEffect(() => {
@@ -38,12 +40,13 @@ export default function Home() {
         <>
             <div className="movieContainer">
                 <div className="movieLeft">
-                    <img src={`${movieData.moviePicture}`}></img>
+                    <img  src={`${movieData.moviePicture}`}></img>
                 </div>
                 <div className="movieRight">
                     <h2>{`${movieData.movieName}`}</h2>
                     <h2>{`${movieData.movieLenght}`}</h2>
                 </div>
+
             </div>
         </>
     )
