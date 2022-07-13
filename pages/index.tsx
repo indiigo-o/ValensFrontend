@@ -2,6 +2,7 @@
 import Card from '../Components/Card/Card';
 import React, { useEffect, useState } from "react";
 import Categories from '../Components/Card/Categories';
+import Link from 'next/link';
 
 export default function Home() {
   const [movieData, setMovieData] = useState([]);
@@ -60,7 +61,7 @@ export default function Home() {
     <>
       <div className="column">
         <div className="header">
-          <a href="#default" className="logo">CompanyLogo</a>
+         <a  className="logo">Movielizacija</a>
           <div className="header-right">
             <a href="#home">Home</a>
           </div>
