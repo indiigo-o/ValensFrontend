@@ -2,7 +2,6 @@
 import Card from '../Components/Card/Card';
 import React, { useEffect, useState } from "react";
 import Categories from '../Components/Card/Categories';
-import Link from 'next/link';
 
 export default function Home() {
   const [movieData, setMovieData] = useState([]);
@@ -77,7 +76,6 @@ export default function Home() {
                     )
                   })
                 }
-
                 <select onChange={sortingBy} className="sortSelect" >
                   <option disabled selected>Sort movies by</option>
                   <option>Year of release</option>
@@ -86,7 +84,6 @@ export default function Home() {
                 <input onChange={searchby} className='searchbar' type="text" placeholder="Search.." />
 
               </ul>
-
             </nav>
           </div>
           <div className="movies">
@@ -99,8 +96,6 @@ export default function Home() {
               })
             }
           </div>
-
-
         </div>
       </div>
     </>

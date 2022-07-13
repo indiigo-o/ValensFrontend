@@ -13,7 +13,6 @@ const Card = (movie: any) => {
                         <h1>{movie.movie.movieName}</h1>
                         <p className="title">{movie.movie.movieName}</p>
                         <p>{movie.movie.movieLenght}</p>
-
                         <p><button>Movie details</button></p>
                     </div>
                 </div>
