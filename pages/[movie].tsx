@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import useStyles from "./MovieStyle";
 
 interface IMovieData {
     id: 1,
@@ -10,11 +9,10 @@ interface IMovieData {
     releaseDate: string,
     addedDate: string,
     moviePicture: string,
-    movie_Category_id: int,
+    movie_Category_id: number,
 }
 
 export default function Home() {
-    const classes = useStyles();
     const [movieData, setMovieData] = useState<Partial<IMovieData>>({});
     const router = useRouter();
     var route = router.query.movie;
@@ -39,11 +37,11 @@ export default function Home() {
 
     return (
         <>
-            <div className={classes.container}>
-                <div className={classes.left}>
-                    <img className={classes.picture} src={`${movieData.moviePicture}`}></img>
+            <div className="{classes.container}">
+                <div className="{classes.left}">
+                    <img className="{classes.picture}" src={`${movieData.moviePicture}`}></img>
                 </div>
-                <div className={classes.right}>
+                <div className="{classes.right}">
                     <h2>{`${movieData.movieName}`}</h2>
                     <h2>{`${movieData.movieLenght}`}</h2>
                 </div>

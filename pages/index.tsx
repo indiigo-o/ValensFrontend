@@ -1,11 +1,9 @@
 
 import Card from '../Components/Card/Card';
-import useStyles from "./indexStyle";
 import React, { useEffect, useState } from "react";
 import Categories from '../Components/Card/Categories';
 
 export default function Home() {
-  const classes = useStyles();
   const [movieData, setMovieData] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
 
@@ -39,7 +37,7 @@ export default function Home() {
 
   return (
     <>
-      <div className={classes.header}>
+      <div className="container">
         <nav>
           <ul>
             {
@@ -53,7 +51,7 @@ export default function Home() {
           </ul>
         </nav>
       </div>
-      <div className={classes.container}>
+      <div className="aaa">
         {
           (movieData.length === 0) ? <p className="notfound">Not found</p> : movieData.map((res: any) => {
             console.log('-----', movieData.length)
