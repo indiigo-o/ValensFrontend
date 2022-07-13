@@ -24,42 +24,54 @@ export default function Home() {
     getCategories();
   }, [])
 
-  async function Filter(id:any,name:any,year:any){
-    let sending={
+  async function Filter(id: any, name: any, year: any) {
+    let sending = {
       id: id,
       year: year,
       name: name
     }
     //const responseS = await fetch("https://localhost:44308/Movie/GetByCategory" + sending);
-   // const response = await responseS.json();
-   // setMovieData(response);
+    // const response = await responseS.json();
+    // setMovieData(response);
   }
 
   return (
     <>
-      <div className="container">
-        <nav>
-          <ul>
+      <div className="column">
+        <div className="header">
+          <a href="#default" className="logo">CompanyLogo</a>
+          <div className="header-right">
+            <a href="#home">Home</a>
+          </div>
+        </div>
+        <div className="all">
+          <div className="categories">
+            <nav>
+              <ul>
+                {
+                  (categoryData.length == 0) ? <p className="notfound">Not found</p> : categoryData.map((res: any) => {
+                    return (
+                      <Categories info={res} onClick={Filter(res.id, "", "")} />
+                    )
+                  })
+                }
+
+              </ul>
+            </nav>
+          </div>
+          <div className="movies">
             {
-              (categoryData.length == 0) ? <p className="notfound">Not found</p> : categoryData.map((res: any) => {
+              (movieData.length === 0) ? <p className="notfound">Not found</p> : movieData.map((res: any) => {
+                console.log('-----', movieData.length)
                 return (
-                  <Categories info={res} onClick={Filter(res.id,"","")} />
+                  <Card movie={res} />
                 )
               })
             }
+          </div>
 
-          </ul>
-        </nav>
-      </div>
-      <div className="aaa">
-        {
-          (movieData.length === 0) ? <p className="notfound">Not found</p> : movieData.map((res: any) => {
-            console.log('-----', movieData.length)
-            return (
-              <Card movie={res} />
-            )
-          })
-        }
+
+        </div>
       </div>
     </>
   )

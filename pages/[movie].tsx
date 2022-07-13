@@ -37,11 +37,11 @@ export default function Home() {
 
     return (
         <>
-            <div className="{classes.container}">
-                <div className="{classes.left}">
-                    <img className="{classes.picture}" src={`${movieData.moviePicture}`}></img>
+            <div className="movieContainer">
+                <div className="movieLeft">
+                    <img  src={`${movieData.moviePicture}`}></img>
                 </div>
-                <div className="{classes.right}">
+                <div className="movieRight">
                     <h2>{`${movieData.movieName}`}</h2>
                     <h2>{`${movieData.movieLenght}`}</h2>
                 </div>
