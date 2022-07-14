@@ -113,7 +113,8 @@ li a:hover:not(.active) {
   display: flex;
   flex-direction: row;
 }
-.favbutton{
+
+.favbutton {
   height: 50%;
   width: 50%;
   margin: 0;
