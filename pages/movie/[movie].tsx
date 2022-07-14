@@ -10,6 +10,7 @@ interface IMovieData {
     releaseDate: string,
     addedDate: string,
     moviePicture: string,
+    movieDescription:string,
     movie_Category_id: number,
 }
 
@@ -45,6 +46,7 @@ export default function Home() {
                 <div className="movieRight">
                     <h2>{`${movieData.movieName}`}</h2>
                     <h2>{`${movieData.movieLenght}`}</h2>
+                    <p>{`${movieData.movieDescription}`}</p>
                 </div>
 
             </div>

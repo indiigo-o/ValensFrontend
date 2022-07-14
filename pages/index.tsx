@@ -60,7 +60,7 @@ export default function Home() {
     <>
       <div className="column">
         <div className="header">
-         <a  className="logo">Movielizacija</a>
+          <a className="logo">Movielizacija</a>
           <div className="header-right">
             <a href="#home">Home</a>
           </div>
@@ -69,6 +69,7 @@ export default function Home() {
           <div className="categories">
             <nav>
               <ul>
+                <h4>Choose category</h4>
                 {
                   (categoryData.length == 0) ? <p className="notfound">Not found</p> : categoryData.map((res: any) => {
                     return (
