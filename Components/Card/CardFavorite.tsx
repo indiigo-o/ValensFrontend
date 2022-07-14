@@ -9,6 +9,7 @@ async function deleteFromFavorites (id: Number) {
     .then(response => {
         if(response.data==true){
             alert("Deleted from favorites successfuly!");
+            window.location.reload();
         }
         else
         alert("Error!")

@@ -83,8 +83,10 @@ export default function Home() {
                   <option>Year of release</option>
                   <option>Name</option>
                 </select>
+                <hr></hr>
                 <input onChange={searchby} className='searchbar' type="text" placeholder="Search.." />
-                <Link href="favorites"><li>Favorites</li></Link>
+                <hr></hr>
+                <Link href="favorites"><li><a>Favorites</a></li></Link>
 
               </ul>
             </nav>
