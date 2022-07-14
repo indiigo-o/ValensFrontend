@@ -3,20 +3,20 @@ import Link from "next/link";
 import React from "react";
 
 
-async function deleteFromFavorites (id: Number) {
+async function deleteFromFavorites(id: Number) {
     console.log("Id Favorites:", id);
     axios.delete("https://localhost:44308/Favorites/Delete?idS=" + id)
-    .then(response => {
-        if(response.data==true){
-            alert("Deleted from favorites successfuly!");
-            window.location.reload();
-        }
-        else
-        alert("Error!")
-    });
+        .then(response => {
+            if (response.data == true) {
+                alert("Deleted from favorites successfuly!");
+                window.location.reload();
+            }
+            else
+                alert("Error!")
+        });
 };
 
-const Card = (movie: any) => {  
+const Card = (movie: any) => {
     return (
         <>
             <div className="card">
@@ -30,7 +30,7 @@ const Card = (movie: any) => {
                     <Link href={`/movies/${movie.movie.movieName}`}>
                         <p><button>Movie details</button></p>
                     </Link>
-                    <p><button className="favbutton" onClick={() =>deleteFromFavorites(movie.movie.id)}>Delete from favorites</button></p>
+                    <p><button className="favbutton" onClick={() => deleteFromFavorites(movie.movie.id)}>Delete from favorites</button></p>
 
                 </div>
             </div>
