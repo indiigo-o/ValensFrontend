@@ -2,6 +2,7 @@
 import Card from '../Components/Card/Card';
 import React, { useEffect, useState } from "react";
 import Categories from '../Components/Card/Categories';
+import Link from 'next/link';
 
 export default function Home() {
   const [movieData, setMovieData] = useState([]);
@@ -83,6 +84,7 @@ export default function Home() {
                   <option>Name</option>
                 </select>
                 <input onChange={searchby} className='searchbar' type="text" placeholder="Search.." />
+                <Link href="favorites"><li>Favorites</li></Link>
 
               </ul>
             </nav>
